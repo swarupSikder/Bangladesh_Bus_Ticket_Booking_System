@@ -1,14 +1,24 @@
 from bus import Bus
 from route import Route
 from passenger import Passenger
+from bus_system import BusSystem
+
+# BusSystem Database
+busSystem = BusSystem()
 
 print('\n--------Add a new Bus--------')
-bus_no = input('Bus Number : ')
+bus_no = int(input('Bus Number : '))
 bus_seat = input('Bus Seat : ')
 start_point = input('Start point : ')
 end_point = input('End point : ')
 bus_1 = Bus(bus_no, Route(start_point, end_point) ,bus_seat)
-print(bus_1)
+bus_2 = Bus(bus_no+1, Route(start_point, end_point) ,bus_seat)
+# print(bus_1)
+
+# check buses in main database
+busSystem.add_bus(bus_1)
+busSystem.add_bus(bus_2)
+busSystem.show_bus_list()
 
 
 
