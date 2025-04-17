@@ -16,4 +16,5 @@ class Bus:
         print('\n--------Bus Detail--------')
         print(f'Bus No: {self.number}')
         print(f'Total Seat: {self.total_seats}')
+        print(self.route)
         return ''
