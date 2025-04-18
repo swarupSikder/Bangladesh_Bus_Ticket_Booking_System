@@ -65,7 +65,7 @@ def book_ticket():
         passenger_name = input('Passenger Name: ')
         passenger_phone = input('Passenger Phone: ')
         passenger = Passenger(passenger_name, passenger_phone, bus)
-        passenger.book_ticket(bus, passenger_name, passenger_phone)
+        passenger.book_ticket(bus.number, passenger_name, passenger_phone)
         busSystem.add_passenger(passenger)                              # not used, but saved for future work
 
     else:

@@ -32,7 +32,6 @@ class Bus:
         print('-------------------------------------------')
         print(f'|              Booking List               |')
         print('|                                         |')
-
         if not self.bookings:
             print('|                  [X]                    |')
             print('|                                         |')
@@ -42,7 +41,4 @@ class Bus:
                 print(booking)
             print('|                                         |')
             print('-------------------------------------------')
-
-
-        
         return ''
