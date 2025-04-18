@@ -3,6 +3,9 @@ from route import Route
 from passenger import Passenger
 from bus_system import BusSystem
 
+# Main DB
+busSystem = BusSystem()
+
 mainMenuText = """
 ----------<<BusCounterBD.com>>-----------
 1. Admin Login 
@@ -20,12 +23,21 @@ adminMenuText = """
 
 """
 
+def add_bus():
+    print('\n<----[Add New Bus]---->')
+    bus_no = int(input('Bus Number : '))
+    bus_seat = int(input('Bus Seat : '))
+    start_point = input('Start point : ')
+    end_point = input('End point : ')
+    bus_1 = Bus(bus_no, Route(start_point, end_point) ,bus_seat)
+    busSystem.add_bus(bus_1)
+
 def admin_login():
     print(adminMenuText)
     admin_opt = int(input('Admin Option: '))
     while True:
         if admin_opt == 1:
-            admin_login()
+            add_bus()
         elif admin_opt == 2:
             pass
         elif admin_opt == 3:
