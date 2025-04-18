@@ -2,6 +2,7 @@ from bus import Bus
 from route import Route
 from passenger import Passenger
 from bus_system import BusSystem
+from admin import Admin
 
 # Main DB
 busSystem = BusSystem()
@@ -23,28 +24,37 @@ adminMenuText = """
 
 """
 
-def add_bus():
-    print('\n<----[Add New Bus]---->')
-    bus_no = int(input('Bus Number : '))
-    bus_seat = int(input('Bus Seat : '))
-    start_point = input('Start point : ')
-    end_point = input('End point : ')
-    bus_1 = Bus(bus_no, Route(start_point, end_point) ,bus_seat)
-    busSystem.add_bus(bus_1)
+welcomeAdminText = """
+---------------------------------------
+|   Welcome Admin! Login Successful   |
+---------------------------------------
+"""
 
 def admin_login():
-    while True:
-        print(adminMenuText)
-        admin_opt = int(input('Admin Option: '))
+    print('\n<----[Admin Login]---->')
+    username = input('Admin Username: ')
+    password = input('Admin Password: ')
 
-        if admin_opt == 1:
-            add_bus()
-        elif admin_opt == 2:
-            busSystem.show_bus_list()
-        elif admin_opt == 3:
-            break
-        else:
-            print('Invalid Option! Try Again!')
+    admin = Admin()
+    if username == admin.username and password == admin.get_password():
+        print(welcomeAdminText)
+        
+        while True:
+            print(adminMenuText)
+            admin_opt = int(input('Admin Option: '))
+
+            if admin_opt == 1:
+                admin.add_bus(busSystem)
+            elif admin_opt == 2:
+                busSystem.show_bus_list()
+            elif admin_opt == 3:
+                break
+            else:
+                print('Invalid Option! Try Again!')
+    else:
+        print('\n[x] Sorry! Something went wrong! Please try again!')
+
+    
 
 
 
