@@ -5,4 +5,3 @@ class Route:
 
     def __repr__(self):
         return f'Route: [{self.start_point} - {self.end_point}]'
-    

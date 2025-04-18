@@ -40,6 +40,8 @@ class Bus:
         else:
             for booking in self.bookings:
                 print(booking)
+            print('|                                         |')
+            print('-------------------------------------------')
 
 
         

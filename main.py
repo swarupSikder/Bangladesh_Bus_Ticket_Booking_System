@@ -1,40 +1,11 @@
-from bus import Bus
-from route import Route
 from passenger import Passenger
 from bus_system import BusSystem
 from admin import Admin
+from todo import Todo
 
 # Main DB
 busSystem = BusSystem()
-
-mainMenuText = """
-----------<<BusCounterBD.com>>-----------
-1. Admin Login 
-2. Book Ticket 
-3. View Buses 
-4. Exit
-
-"""
-
-adminMenuText = """
-<----[Admin Menu]---->
-1. Add Bus 
-2. View All Buses 
-3. Logout
-
-"""
-
-welcomeAdminText = """
----------------------------------------
-|   Welcome Admin! Login Successful   |
----------------------------------------
-"""
-
-welcomePassengerText = """
----------------------------------------
-|   Welcome Admin! Login Successful   |
----------------------------------------
-"""
+todoText = Todo()
 
 #   -   -   -   -   -   -   # 
 #                           #
@@ -48,17 +19,17 @@ def admin_login():
 
     admin = Admin()
     if username == admin.username and password == admin.get_password():
-        print(welcomeAdminText)
+        print(todoText.welcomeAdminText)
 
         while True:
-            print(adminMenuText)
-            admin_opt = int(input('Admin Option: '))
+            print(todoText.adminMenuText)
+            admin_opt = input('Admin Option: ')
 
-            if admin_opt == 1:
+            if admin_opt == '1':
                 admin.add_bus(busSystem)
-            elif admin_opt == 2:
+            elif admin_opt == '2':
                 busSystem.show_bus_list()
-            elif admin_opt == 3:
+            elif admin_opt == '3':
                 print('<--------[Logged Out Successfully]-------->')
                 break
             else:
@@ -78,6 +49,7 @@ def admin_login():
 #                           #
 #   -   -   -   -   -   -   #
 def book_ticket():
+    print(todoText.welcomePassengerText)
     print('\n<----[Book Ticket]---->')
 
     print('-> Please, provide rout info')
@@ -94,6 +66,7 @@ def book_ticket():
         passenger_phone = input('Passenger Phone: ')
         passenger = Passenger(passenger_name, passenger_phone, bus)
         passenger.book_ticket(bus, passenger_name, passenger_phone)
+        busSystem.add_passenger(passenger)                              # not used, but saved for future work
 
     else:
         print('No bus is available for this route')
@@ -101,17 +74,25 @@ def book_ticket():
 
 
 
+
+
+
+#   -   -   -   -   -   -   # 
+#                           #
+#           Main            #
+#                           #
+#   -   -   -   -   -   -   #
 while True:
-    print(mainMenuText)
-    opt = int(input('Enter Option: '))
+    print(todoText.mainMenuText)
+    opt = input('Enter Option: ')
     
-    if opt == 1:
+    if opt == '1':
         admin_login()
-    elif opt == 2:
+    elif opt == '2':
         book_ticket()    # book ticket option
-    elif opt == 3:
+    elif opt == '3':
         busSystem.show_bus_list()
-    elif opt == 4:
+    elif opt == '4':
         print('<-------------[Exited Successfully]------------->')
         break
     else:

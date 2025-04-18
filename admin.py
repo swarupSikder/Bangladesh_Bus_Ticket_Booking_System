@@ -17,7 +17,4 @@ class Admin:
         end_point = input('End point : ')
         bus_1 = Bus(bus_no, Route(start_point, end_point) ,bus_seat)
         busSystem.add_bus(bus_1)
-
-# ad = Admin('admin', '1234')
-# print(ad.username)
-# print(ad.get_password())
+        print(f'\nSuccess! You have added a new Bus: Bus-[{bus_no}]')
