@@ -22,7 +22,7 @@ class Bus:
         print(f'Total Seat: {self.total_seats}')
         print(self.route)
         print('Bookings -> ')
-        print(f'Available seats : {self.available_seats}')
+        print(f'Available seats : {self.available_seats()}')
         print(f'Booked seats : {self.booked_seats}')
 
         return ''
