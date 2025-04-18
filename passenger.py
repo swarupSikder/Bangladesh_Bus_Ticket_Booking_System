@@ -26,5 +26,5 @@ class Booking:
         self.phone = phone
 
     def __repr__(self):
-        return f"Passenger: {self.name}, Phone: {self.phone}"
+        return f"-> Passenger: {self.name}, Phone: {self.phone}"
     

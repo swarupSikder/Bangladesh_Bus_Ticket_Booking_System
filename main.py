@@ -33,13 +33,14 @@ def add_bus():
     busSystem.add_bus(bus_1)
 
 def admin_login():
-    print(adminMenuText)
-    admin_opt = int(input('Admin Option: '))
     while True:
+        print(adminMenuText)
+        admin_opt = int(input('Admin Option: '))
+
         if admin_opt == 1:
             add_bus()
         elif admin_opt == 2:
-            pass
+            busSystem.show_bus_list()
         elif admin_opt == 3:
             break
         else:
@@ -51,6 +52,7 @@ def admin_login():
 while True:
     print(mainMenuText)
     opt = int(input('Enter Option: '))
+    
     if opt == 1:
         admin_login()
     elif opt == 2:

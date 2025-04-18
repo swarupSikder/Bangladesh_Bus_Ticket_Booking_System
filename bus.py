@@ -17,19 +17,28 @@ class Bus:
             self.bookings.append(booking)
 
     def __repr__(self):
-        print('\n--------Bus Detail--------')
-        print(f'Bus No: {self.number}')
-        print(f'Total Seat: {self.total_seats}')
-        print(self.route)
-        print('Bookings -> ')
-        print(f'Available seats : {self.available_seats()}')
-        print(f'Booked seats : {self.booked_seats}')
-        print(f'---Booking List---')
-        
+        print('\n-------------------------------------------')
+        print(f'|               Bus [{self.number}]                |')
+        print('-------------------------------------------')
+        print(f'-> Route           |\t[{self.route.start_point} - {self.route.end_point}]')
+        print('-------------------------------------------')
+        print(f'-> Total Seat      |\t{self.total_seats}')
+        print('-------------------------------------------')
+        print(f'-> Available seats |\t{self.available_seats()}')
+        print('-------------------------------------------')
+        print(f'-> Booked seats    |\t{self.booked_seats}')
+        print('-------------------------------------------')
+        print(f'|              Booking List               |')
+
         if not self.bookings:
-            print('empty')
+            print('|                                         |')
+            print('|                  [X]                    |')
+            print('|                                         |')
+            print('-------------------------------------------')
         else:
             for booking in self.bookings:
                 print(booking)
 
+
+        
         return ''

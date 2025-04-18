@@ -9,8 +9,13 @@ class BusSystem:
         self.busList.append(bus)
 
     def show_bus_list(self):
-        for bus in self.busList:
-            print(bus)
+        print('<<<--------------[All Buses]-------------->>>')
+
+        if len(self.busList) == 0:
+            print('[X] Empty Station')
+        else:
+            for bus in self.busList:
+                print(bus)
 
     def book_ticket(self, bus_number, name, phone):
         pass
