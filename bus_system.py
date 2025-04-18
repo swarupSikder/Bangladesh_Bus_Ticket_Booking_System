@@ -20,5 +20,8 @@ class BusSystem:
     def book_ticket(self, bus_number, name, phone):
         pass
 
-    def find_bus(self):
-        pass
+    def find_bus(self, start_point, end_point):
+        for bus in self.busList:
+            if bus.route.start_point == start_point and bus.route.end_point == end_point:
+                return bus
+        return None
