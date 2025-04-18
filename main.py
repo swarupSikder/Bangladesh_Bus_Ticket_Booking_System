@@ -89,11 +89,12 @@ def book_ticket():
     if bus:
         print(f'Bus [{bus.number}] is found on {bus.route}')
         print(bus)
-
-
         print('Now enter Passenger Info')
         passenger_name = input('Passenger Name: ')
         passenger_phone = input('Passenger Phone: ')
+        passenger = Passenger(passenger_name, passenger_phone, bus)
+        passenger.book_ticket(bus, passenger_name, passenger_phone)
+
     else:
         print('No bus is available for this route')
 
@@ -115,21 +116,3 @@ while True:
         break
     else:
         print('Invalid Option! Try Again!')
-
-
-
-
-
-
-# print('\n--------Add a new Passenger--------')
-# passenger_name = input('Passenger Name : ')
-# passenger_phone = input('Passenger Phone : ')
-# p1 = Passenger(passenger_name, passenger_phone, bus_1)
-# print(p1)
-
-# p1.book_ticket(bus_1, passenger_name, passenger_phone)
-
-
-# p2 = Passenger('kopa', 1290, bus_1)
-# p2.book_ticket(bus_1, 'kopa', 1290)
-# busSystem.show_bus_list()

@@ -11,7 +11,7 @@ class Bus:
     
     def book_seat(self, booking):
         if self.total_seats - self.booked_seats == 0:
-            print(f'Sorry! Booking is closed for this Bus with number : {self.number}')
+            print(f'\n[x] Sorry! Booking is closed for this Bus with number : {self.number}')
         else:
             self.booked_seats += 1
             self.bookings.append(booking)
