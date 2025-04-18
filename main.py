@@ -14,7 +14,6 @@ end_point = input('End point : ')
 bus_1 = Bus(bus_no, Route(start_point, end_point) ,bus_seat)
 bus_2 = Bus(bus_no+1, Route(start_point, end_point) ,bus_seat)
 # print(bus_1)
-
 # check buses in main database
 busSystem.add_bus(bus_1)
 busSystem.add_bus(bus_2)
@@ -29,4 +28,8 @@ p1 = Passenger(passenger_name, passenger_phone, bus_1)
 print(p1)
 
 p1.book_ticket(bus_1, passenger_name, passenger_phone)
+
+
+p2 = Passenger('kopa', 1290, bus_1)
+p2.book_ticket(bus_1, 'kopa', 1290)
 busSystem.show_bus_list()

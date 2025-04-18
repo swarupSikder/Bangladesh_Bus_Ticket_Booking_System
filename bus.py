@@ -24,5 +24,12 @@ class Bus:
         print('Bookings -> ')
         print(f'Available seats : {self.available_seats()}')
         print(f'Booked seats : {self.booked_seats}')
+        print(f'---Booking List---')
+        
+        if not self.bookings:
+            print('empty')
+        else:
+            for booking in self.bookings:
+                print(booking)
 
         return ''
