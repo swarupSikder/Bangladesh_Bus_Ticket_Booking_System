@@ -22,6 +22,8 @@ class Bus:
         print('-------------------------------------------')
         print(f'-> Route           |\t[{self.route.start_point} - {self.route.end_point}]')
         print('-------------------------------------------')
+        print(f'-> Fare            |\t500 Taka (BDT)')
+        print('-------------------------------------------')
         print(f'-> Total Seat      |\t{self.total_seats}')
         print('-------------------------------------------')
         print(f'-> Available seats |\t{self.available_seats()}')
@@ -29,9 +31,9 @@ class Bus:
         print(f'-> Booked seats    |\t{self.booked_seats}')
         print('-------------------------------------------')
         print(f'|              Booking List               |')
+        print('|                                         |')
 
         if not self.bookings:
-            print('|                                         |')
             print('|                  [X]                    |')
             print('|                                         |')
             print('-------------------------------------------')
